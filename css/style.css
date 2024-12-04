@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+
+body{
+    font-family: 'Titillium Web';
+    font-size: 1.5rem;
+    padding: 10px;
+    background-color: #b0a586;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+
+}
+#p-home{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#tittles{
+    padding-top: 20px;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    font-size: 4rem;
+    .heading{
+        justify-content: center;
+        margin: auto;
+    }
+    .sub-heading{
+        margin: auto;
+        justify-content: center;
+    }
+}
+
+#p-home aside{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 20px;
+    margin: auto;
+    padding-bottom: 40px;
+    
+}
+
+.b-Start{
+    font-size: 2rem;
+    border: 5px dotted;
+    background-color: #8e897a;
+    max-width: 90px;
+    /* padding: 5px 5px 5px ; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+
+a:hover{
+    color: rgb(255, 0, 200);
+
+}
+a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: #ffffff;
+}
+
+/* General Styles */
+
+header, main {
+    padding: 20px;
+}
+
+header.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4c493f;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1, header h2, header h4, header h5 {
+    margin: 5px 0;
+}
+
+#tittle {
+    max-width: 70%;
+}
+
+#mypicture img {
+    border-radius: 5%;
+    max-width: 200px;
+}
+
+/* Navigation Menu */
+nav {
+    background-color: #050402;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+nav ul li:hover ul {
+    display: flex;
+}
+
+nav ul li ul li a {
+    padding: 10px;
+    border-radius: 5px;
+}
+/* page 03 */
+.G-page03 {
+    margin: 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: auto;
+    font-size: 2.5em;
+    color: #ffffff;
+}
+
+#p-my-works {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+#my-works h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fffefe;
+}
+
+.s-work {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%; /* Adaptable al ancho */
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.s-work h3 {
+    font-size: 1.5em;
+    color: #444;
+}
+
+.s-work p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.s-work img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* future samples */
+.G-page04{
+    margin: 0;
+    text-align: center;
+}
+
+#p-future-projects {
+    padding: 40px 20px;
+}
+
+#p-future-projects h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.s-project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.s-project {
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 300px;
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 20px); /* 3 columnas */
+}
+
+.s-project img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.s-project h3 {
+    font-size: 1.5em;
+    color: #444;
+}
+
+.s-project p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header.intro{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #mypicture img {
+        margin-top: 20px;
+    }
+}
+
+/* .page02{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap:row wrap;
+    align-items: stretch;
+    align-items: baseline;
+    flex-grow: 3;
+
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+#mypicture{
+    flex-grow: 1;
+    padding: 20px;
+    
+
+}
+
+#tittle{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-direction: column;
+    
+}
+.intro{
+    display: grid;
+    grid-template-rows: 0.5fr;
+}
+
+#next-page{
+    
+} */
+
+/* @media screen and (max-width: 700px) {
+    .page02{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        flex-wrap: wrap;
+        align-items: stretch;
+        align-items: baseline;
+    }
+} */
