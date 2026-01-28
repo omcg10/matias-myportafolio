@@ -7,22 +7,164 @@
         <link href="lib/fontawesome-free-6.6.0-web/css/all.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body class="G-page">
-        <div id="p-home">
-            <header id="tittles">
-                <div class="heading"> Welcome to my Project 5</div>
-                <div class="sub-heading"> My portafolio <i class="fa-solid fa-briefcase"></i></div>
-            </header>
-            <aside>
-                Hi, my name is Matias, I'm from Ecuador and today you're going to see my portfolio made by myself using HTML and CSS with everything I've learned in this course. I hope you like it, it's not much but it's honest work.
-            </aside>
+    <body>
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="#" class="logo">OMCG</a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header class="hero">
+            <div class="container">
+                <h1>Oscar Matias Castro Garrido</h1>
+                <h2 class="subtitle">IT Systems Management & Networking</h2>
+            </div>
+        </header>
 
-            <main class="b-Start">
-                <a href="myportafolio.html">START</a> 
-            </main>
-            <!-- <footer>
-                <div>Social media : <a href="https://www.instagram.com/matias_castr05/profilecard/?igsh=OWxsYmp6dHV3ODVo" class="fa-brands fa-instagram"></a></div>
-            </footer> -->
-        </div>
+        <section id="about" class="section-dark">
+            <div class="container">
+                <h3 class="section-title">About Me</h3>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                        <span class="terminal-title">oscar@server:~</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="command">> cat about_me.txt</p>
+                        <p class="about-text">
+                            Hi, I'm Oscar. I am a bilingual IT specialist with a genuine passion for solving complex problems and building secure infrastructure. 
+                            I specialize in Windows Server environments, PowerShell automation, and network security.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="section-light">
+            <div class="container">
+                <h3 class="section-title">Technical Skills</h3>
+                
+                <div class="skills-grid">
+                    
+                    <div class="skill-category">
+                        <h4>Systems Administration</h4>
+                        <ul>
+                            <li>Windows Server 2019/2022</li>
+                            <li>Active Directory (AD) & GPO</li>
+                            <li>PowerShell Scripting</li>
+                            <li>Linux (Ubuntu/CLI)</li>
+                            <li>Windows Automation</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Networking</h4>
+                        <ul>
+                            <li>Cisco Routing & Switching</li>
+                            <li>VLANs & OSPF</li>
+                            <li>Ubiquiti UniFi (WLAN)</li>
+                            <li>OPNsense Firewall</li>
+                            <li>TCP/IP, DNS, DHCP</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Security & Cloud</h4>
+                        <ul>
+                            <li>Azure Fundamentals</li>
+                            <li>Virtualization (VMware/Hyper-V)</li>
+                            <li>Vulnerability Assessment (Nmap)</li>
+                            <li>Access Control (RBAC)</li>
+                            <li>SSH Hardening</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>IT Support</h4>
+                        <ul>
+                            <li>Hardware Diagnostics</li>
+                            <li>Ticketing Workflow (ITIL)</li>
+                            <li>Remote Desktop (RDP)</li>
+                            <li>User Account Management</li>
+                            <li>Office 365 Support</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-dark">
+            <div class="container">
+                <h3 class="section-title">Featured Projects</h3>
+                
+                <div class="projects-grid">
+                    
+                    <div class="project-card">
+                        <div class="card-content">
+                            <h4>Small Office Network Infrastructure</h4>
+                            <p class="tech-stack">Windows Server 2022 • PowerShell • OPNsense</p>
+                            <p>Designed a fault-tolerant Windows Server ecosystem. Automated user account creation and OU management using PowerShell scripts, reducing manual configuration time by 80%.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/omcg10/Small-Office-Network-Infrastructure.git" class="github-tab" target="_blank">View on GitHub <span>&nearr;</span></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-content">
+                            <h4>Linux Vulnerability Assessment</h4>
+                            <p class="tech-stack">Ubuntu • Nmap • SSH Hardening</p>
+                            <p>Conducted a comprehensive security audit on legacy Ubuntu systems. Identified critical exploits and executed remediation and system hardening strategies.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/omcg10/it-security-portfolio-github.git" class="github-tab" target="_blank">View on GitHub <span>&nearr;</span></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-content">
+                            <h4>Secure Wireless Deployment</h4>
+                            <p class="tech-stack">Ubiquiti UniFi • VLANs • WPA3</p>
+                            <p>Deployed a segmented wireless network isolating Guest traffic from the corporate LAN using VLANs and WPA3 Enterprise security configurations.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/omcg10/Secure-Wireless-Deployment.git" class="github-tab" target="_blank">View on GitHub <span>&nearr;</span></a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                    <div class="card-content">
+                        <h4>Hybrid Cloud Infrastructure</h4>
+                        <p class="tech-stack">Microsoft Azure • VPN Gateway • Hybrid Networking</p>
+                        <p>Designed a functional hybrid cloud environment connecting a local on-premises VM to an Azure VM via a Site-to-Site VPN. Validated secure connectivity through successful ping and file transfer tests between environments.</p>
+                    </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/omcg10/Hybrid-Cloud-Infrastructure.git" class="github-tab" target="_blank">View on GitHub <span>&nearr;</span></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-dark">
+            <div class="container contact-container">
+                <h3 class="section-title">Contact</h3>
+                <p>Interested in collaborating? Send me an email.</p>
+                <a href="mailto:Matiascg133@gmail.com" class="email-button">Matiascg133@gmail.com</a>
+                <a href="https://www.linkedin.com/in/matias-castro-19232b319" class="email-button" target="_blank">View on Linkedin <span>&nearr;</span></a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Oscar Castro. Nova Scotia, Canada.</p>
+        </footer>
+
     </body>
 </html>
