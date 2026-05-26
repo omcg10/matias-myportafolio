@@ -18,13 +18,14 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--text-main);
     line-height: 1.6;
+    padding-top: 60px; /* Ajuste por defecto para barra fija */
     
-    /* FONDO TECNOLÓGICO NUEVO */
+    /* FONDO TECNOLÓGICO */
     background-color: var(--bg-dark);
     background-image: 
         linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px; /* Tamaño de los cuadritos */
+    background-size: 40px 40px; 
 }
 
 /* Contenedor general para centrar contenido */
@@ -32,6 +33,65 @@ body {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* NAVEGACIÓN BASE (PC) */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.95); 
+    backdrop-filter: blur(10px); 
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 2px solid var(--accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-links .resume-link {
+    color: var(--accent);
+    font-weight: 600;
+    border: 1px solid var(--accent);
+    padding: 5px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links .resume-link:hover {
+    background-color: var(--accent);
+    color: var(--bg-dark);
 }
 
 /* HERO SECTION */
@@ -49,12 +109,18 @@ body {
     letter-spacing: -1px;
 }
 
+/* SUBTÍTULO LIMPIO Y COMPLETAMENTE CENTRADO (SIN ANIMACIÓN) */
 .hero .subtitle {
     font-size: 1.25rem;
     color: var(--accent);
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin: 0 auto;
+    text-align: center;
+    white-space: normal; /* Permite saltar de línea limpiamente en pantallas muy chicas */
+    width: 100%;
+    max-width: 700px;
 }
 
 /* SECCIONES GENERALES */
@@ -70,21 +136,72 @@ section {
     display: inline-block;
 }
 
-/* SOBRE MÍ */
+/* SOBRE MÍ (ESTILO TERMINAL) */
 .about-text {
     font-size: 1.1rem;
     color: var(--text-muted);
     max-width: 700px;
 }
 
-/* PROYECTOS (GRID) */
+.terminal-window {
+    background-color: #1e1e1e; 
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 750px;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: 'Courier New', monospace; 
+    border: 1px solid #333;
+}
+
+.terminal-header {
+    background-color: #2d2d2d;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #333;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.terminal-title {
+    margin-left: 10px;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.terminal-body {
+    padding: 20px;
+    color: #d4d4d4;
+}
+
+.command {
+    color: var(--accent);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.terminal-body .about-text {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* PROYECTOS Y CERTIFICACIONES (GRID) */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* TARJETA DE PROYECTO */
 .project-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border);
@@ -125,7 +242,6 @@ section {
     color: var(--text-muted);
 }
 
-/* PESTAÑA / BOTÓN DE GITHUB */
 .card-footer {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 15px 25px;
@@ -146,6 +262,59 @@ section {
 
 .github-tab:hover {
     color: var(--accent);
+}
+
+/* SECCIÓN DE SKILLS */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 30px;
+}
+
+.skill-category {
+    background-color: var(--bg-card);   
+    border: 1px solid var(--border);    
+    border-radius: 12px;                
+    padding: 25px;                      
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;                       
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border-color: var(--accent);
+}
+
+.skill-category h4 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent); 
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.skill-category ul li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
 /* CONTACTO */
@@ -179,117 +348,48 @@ footer {
     border-top: 1px solid var(--border);
 }
 
-/* RESPONSIVE */
+/* AJUSTES RESPONSIVOS COMPLETOS (MÓVIL / TABLET) */
 @media (max-width: 600px) {
     .hero h1 {
         font-size: 2rem;
     }
-}
-/* SECCIÓN DE SKILLS */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Ajustado para mejor ancho */
-    gap: 30px;
+    .hero .subtitle {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
 }
 
-/* Hacemos que la categoría de skill se vea IGUAL a una tarjeta de proyecto */
-.skill-category {
-    background-color: var(--bg-card);   /* Mismo fondo oscuro que proyectos */
-    border: 1px solid var(--border);    /* Mismo borde sutil */
-    border-radius: 12px;                /* Mismas esquinas redondeadas */
-    padding: 25px;                      /* Espaciado interno */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    height: 100%;                       /* Para que todas tengan la misma altura */
+@media (max-width: 768px) {
+    /* Muestra y apila el menú abajo del logo OMCG de forma limpia en móviles */
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: flex;          
+        flex-wrap: wrap;        
+        justify-content: center;
+        gap: 12px;
+        padding: 0;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;    
+    }
+
+    /* Da espacio superior extra para que el Hero no se esconda bajo el menú apilado */
+    body {
+        padding-top: 110px; 
+    }
+
+    #certifications .projects-grid {
+        gap: 20px;
+    }
 }
 
-/* Efecto Hover igual que en proyectos */
-.skill-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    border-color: var(--accent);
-}
-
-.skill-category h4 {
-    font-size: 1.1rem;
-    color: var(--text-main);
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--accent); /* Línea de acento abajo del título */
-    padding-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.skill-category ul {
-    list-style: none;
-    padding: 0;
-}
-
-.skill-category ul li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 10px;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-/* El punto (bullet) de color azul tecnológico */
-.skill-category ul li::before {
-    content: "•";
-    color: var(--accent);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-/* NAVEGACIÓN */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(15, 23, 42, 0.95); /* Fondo semitransparente */
-    backdrop-filter: blur(10px); /* Efecto borroso moderno */
-    z-index: 1000;
-    border-bottom: 1px solid var(--border);
-    padding: 15px 0;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-decoration: none;
-    border: 2px solid var(--accent);
-    padding: 2px 8px;
-    border-radius: 4px;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--accent);
-}
-
-/* Ajuste para que el contenido no quede oculto por la barra fija */
-body {
-    padding-top: 60px; 
-}
-/* ANIMACIONES */
+/* ANIMACIÓN FLUIDA DE ENTRADA (FADE IN) */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -301,111 +401,13 @@ body {
     }
 }
 
-/* Aplicar la animación al Hero y las Secciones */
-.hero, .section-title, .project-card, .skill-category {
+/* Aplicar transiciones fluidas de entrada a los bloques de contenido */
+.hero, .section-title, .project-card, .skill-category, .certification-card {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Un pequeño retraso para que no suba todo al mismo tiempo */
 .project-card:nth-child(2) { animation-delay: 0.1s; }
 .project-card:nth-child(3) { animation-delay: 0.2s; }
 .skill-category:nth-child(2) { animation-delay: 0.1s; }
 .skill-category:nth-child(3) { animation-delay: 0.2s; }
 .skill-category:nth-child(4) { animation-delay: 0.3s; }
-.hero .subtitle {
-    font-size: 1.25rem;
-    color: var(--accent);
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    
-    /* EFECTO TYPEWRITER */
-    overflow: hidden; /* Oculta lo que no se ha escrito */
-    border-right: 3px solid var(--accent); /* El cursor parpadeante */
-    white-space: nowrap; /* Mantiene el texto en una línea */
-    margin: 0 auto; /* Centrado */
-    width: 0; /* Empieza oculto */
-    animation: 
-        typing 3.5s steps(40, end) forwards, 
-        blink-caret .75s step-end infinite;
-}
-
-/* Animación de escribir */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 60% } /* Ajusta esto si el texto queda corto o largo */
-}
-
-/* Animación del cursor */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: var(--accent) }
-}
-/* TERMINAL WINDOW STYLE */
-.terminal-window {
-    background-color: #1e1e1e; /* Fondo negro tipo VS Code */
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    max-width: 750px;
-    margin: 0 auto;
-    overflow: hidden;
-    font-family: 'Courier New', monospace; /* Fuente monoespaciada */
-    border: 1px solid #333;
-}
-
-.terminal-header {
-    background-color: #2d2d2d;
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-bottom: 1px solid #333;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-.red { background-color: #ff5f56; }
-.yellow { background-color: #ffbd2e; }
-.green { background-color: #27c93f; }
-
-.terminal-title {
-    margin-left: 10px;
-    font-size: 0.8rem;
-    color: #999;
-}
-
-.terminal-body {
-    padding: 20px;
-    color: #d4d4d4;
-}
-
-.command {
-    color: var(--accent);
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-/* Ajuste para el texto dentro de la terminal */
-.terminal-body .about-text {
-    color: #ccc;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* Resaltar el botón de Resume en el Nav */
-.nav-links .resume-link {
-    color: var(--accent);
-    font-weight: 600;
-    border: 1px solid var(--accent);
-    padding: 5px 12px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.nav-links .resume-link:hover {
-    background-color: var(--accent);
-    color: var(--bg-dark);
-}
